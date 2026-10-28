@@ -1,0 +1,68 @@
+{
+  "preview": false,
+  "init_offset": 0,
+  "messages": [
+    {
+      "type": "INFO",
+      "text": "Your timerange was substituted based on your search string"
+    }
+  ],
+  "fields": [
+    {
+      "name": "_time"
+    },
+    {
+      "name": "transaction.transaction_id"
+    },
+    {
+      "name": "response.status"
+    },
+    {
+      "name": "mode"
+    }
+  ],
+  "results": [
+    {
+      "_time": "2026-10-28T22:57:00.657+00:00",
+      "transaction.transaction_id": "auJ9vAu4EmFW7RLbUz-8ugAAAAA",
+      "response.status": "403",
+      "mode": "ENABLED"
+    },
+    {
+      "_time": "2026-10-28T22:55:51.831+00:00",
+      "transaction.transaction_id": "auJ9dNiFW_n_Ji-Anla9kwAAAAA",
+      "response.status": "200",
+      "mode": "DETECTION_ONLY"
+    },
+    {
+      "_time": "2026-10-28T22:55:38.538+00:00",
+      "transaction.transaction_id": "auJ9Z22WV9dQBmHAY3MC_wAAAAM",
+      "response.status": "200",
+      "mode": "DETECTION_ONLY"
+    },
+    {
+      "_time": "2026-10-28T22:53:49.481+00:00",
+      "transaction.transaction_id": "auJ8-gY5EIcAEr-n95eyowAAAAU",
+      "response.status": "200"
+    },
+    {
+      "_time": "2026-10-28T22:52:54.186+00:00",
+      "transaction.transaction_id": "auJ8wxKgGYZnEyquB9dG6AAAAAQ",
+      "response.status": "200",
+      "mode": "DETECTION_ONLY"
+    },
+    {
+      "_time": "2026-10-28T22:50:40.234+00:00",
+      "transaction.transaction_id": "auJ8PTTQ95ExmOxxYEDNuAAAAAI",
+      "response.status": "200",
+      "mode": "DETECTION_ONLY"
+    },
+    {
+      "_time": "2026-10-28T22:58:39.016+00:00",
+      "transaction.transaction_id": "auJ-G8Y4upfwHDSEFwBDywAAAAM",
+      "response.status": "200",
+      "mode": "ENABLED"
+    }
+  ],
+  "highlighted": {}
+}

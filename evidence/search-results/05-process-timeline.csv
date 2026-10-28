@@ -1,4 +1,0 @@
-UTC,PID,ParentPID,Image,CommandLine,ProcessGuid
-"2026-10-19T09:08:36.8187271Z",3476,2972,"C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe","""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"" -NoProfile -File C:\Users\Public\Documents\MohamedLab\Network\status-check.ps1 -Mode Fixed ","{f4a656a0-de14-6ad5-fc00-000000000700}"
-"2026-10-19T09:08:37.5931021Z",2556,2972,"C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe","""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"" -NoProfile -File C:\Users\Public\Documents\MohamedLab\Network\status-check.ps1 -Mode Jitter ","{f4a656a0-de15-6ad5-fe00-000000000700}"
-"2026-10-19T09:08:39.6439353Z",2428,2972,"C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe","""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"" -NoProfile -File C:\Users\Public\Documents\MohamedLab\Network\health-check.ps1 ","{f4a656a0-de17-6ad5-0001-000000000700}"

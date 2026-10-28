@@ -1,0 +1,87 @@
+[
+  {
+    "file": "evidence/alert-settings-before.json",
+    "bytes": 712,
+    "sha256": "85e18bfbc68c7f2c4eb5c3b9dd1abbd525a2489484633d41eb13c81c4aa8b3ef"
+  },
+  {
+    "file": "evidence/alert-settings-stopped.json",
+    "bytes": 713,
+    "sha256": "7d2c8bfa9078b2376b6c4df81fc6307f4e046bcd3b6f331bcf5bf1a147cb5179"
+  },
+  {
+    "file": "evidence/case-correlations.json",
+    "bytes": 8068,
+    "sha256": "3dd5eb0d4bbeddff8ed21ef4fa68662ad12073f2eae0ff5a55010efcdc6ac2d9"
+  },
+  {
+    "file": "evidence/native/access.log",
+    "bytes": 141,
+    "sha256": "b6cf90871af8f88c1aee765f58872384700149aa069fc7671a972cdc7e7f0604"
+  },
+  {
+    "file": "evidence/native/after-blocked.json",
+    "bytes": 887,
+    "sha256": "a13ac227e05d066e5016df1fee2a69d6a6b435a75ab151422c2165fb7df1274c"
+  },
+  {
+    "file": "evidence/native/allowed-download.txt",
+    "bytes": 85,
+    "sha256": "2cb5d2a756e4ecf603f4c3bc8c82fa4a5df50aa1f0fbad3920b35e9d72d6e398"
+  },
+  {
+    "file": "evidence/native/backend-access.jsonl",
+    "bytes": 24940,
+    "sha256": "5918fbc1ac774928710dbd0207d2303830a63bcb5a082b3b9f3d53132670c024"
+  },
+  {
+    "file": "evidence/native/before-blocked.json",
+    "bytes": 391,
+    "sha256": "eb4a579d668d5f36453fd1253e888272e552fa048da4388085a93c059ba2d870"
+  },
+  {
+    "file": "evidence/native/calibration-waf-row-4.bin",
+    "bytes": 88269,
+    "sha256": "8717239b07e15460334318bb79e2d77e9386c6b0349212712cb4830172c2ffb0"
+  },
+  {
+    "file": "evidence/native/download-proof.json",
+    "bytes": 454,
+    "sha256": "3b37816f886f293a7f6d483ee9308794342dd68145990b20bd6631cf6b8c25fc"
+  },
+  {
+    "file": "evidence/native/origin-access.jsonl",
+    "bytes": 206,
+    "sha256": "63928470e68a23ab3c91c16cb7f6ab60a2a6e868bf51abfcec08132e40f290ce"
+  },
+  {
+    "file": "evidence/native/process-audit.jsonl",
+    "bytes": 36771,
+    "sha256": "dbedd331378cb112891591f370d387c16d2dad5cc871942253cdeaf3d52d0df8"
+  },
+  {
+    "file": "evidence/native/proxy-access.jsonl",
+    "bytes": 301,
+    "sha256": "f6f3927081e0f5389b910a2d15735c58e731cb086e53e69e08e284c163d59941"
+  },
+  {
+    "file": "evidence/native/waf-access.jsonl",
+    "bytes": 17939,
+    "sha256": "f44c57d8adeb9751cbafabadb8ac549219d552f39b2ee11f21689deebb0ffb0d"
+  },
+  {
+    "file": "evidence/native/waf-audit.jsonl",
+    "bytes": 740974,
+    "sha256": "386c6dcde9ec6ff6b068d0bc6ec007501030d2d671b12d4736769e2a130b7439"
+  },
+  {
+    "file": "evidence/native/waf-export-notes.json",
+    "bytes": 523,
+    "sha256": "3bce2b5fe081e47eb9702eb37479786e64d9dbb02fb7f9f5a80da8e855801345"
+  },
+  {
+    "file": "evidence/scheduled-alert-results.json",
+    "bytes": 1204,
+    "sha256": "dac6ac118dd5d402111c896f1519c4344996f977634a9dba504d1bce7bd00572"
+  }
+]

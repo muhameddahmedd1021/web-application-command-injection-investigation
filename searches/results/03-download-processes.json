@@ -1,0 +1,72 @@
+{
+  "preview": false,
+  "init_offset": 0,
+  "messages": [
+    {
+      "type": "INFO",
+      "text": "Your timerange was substituted based on your search string"
+    }
+  ],
+  "fields": [
+    {
+      "name": "_time"
+    },
+    {
+      "name": "audit_serial"
+    },
+    {
+      "name": "pid"
+    },
+    {
+      "name": "ppid"
+    },
+    {
+      "name": "euid"
+    },
+    {
+      "name": "exe"
+    },
+    {
+      "name": "command"
+    }
+  ],
+  "results": [
+    {
+      "_time": "2026-10-28T22:55:51.784+00:00",
+      "audit_serial": "1169",
+      "pid": "15322",
+      "ppid": "15312",
+      "euid": "33",
+      "exe": "/usr/bin/curl",
+      "command": "curl --interface 192.168.144.20 --proxy http://192.168.144.20:3128 --noproxy '' http://192.168.144.1:8090/training-note.txt -o /tmp/soc-training-note.txt"
+    },
+    {
+      "_time": "2026-10-28T22:55:51.783+00:00",
+      "audit_serial": "1168",
+      "pid": "15321",
+      "ppid": "15312",
+      "euid": "33",
+      "exe": "/usr/bin/id",
+      "command": "/usr/bin/id"
+    },
+    {
+      "_time": "2026-10-28T22:55:48.684+00:00",
+      "audit_serial": "1167",
+      "pid": "15313",
+      "ppid": "15312",
+      "euid": "33",
+      "exe": "/usr/bin/ping",
+      "command": "ping -c 4 127.0.0.1"
+    },
+    {
+      "_time": "2026-10-28T22:55:48.682+00:00",
+      "audit_serial": "1166",
+      "pid": "15312",
+      "ppid": "15305",
+      "euid": "33",
+      "exe": "/usr/bin/dash",
+      "command": "sh -c -- 'ping  -c 4 127.0.0.1; /usr/bin/id; curl --interface 192.168.144.20 --proxy http://192.168.144.20:3128 --noproxy \"\" http://192.168.144.1:8090/training-note.txt -o /tmp/soc-training-note.txt'"
+    }
+  ],
+  "highlighted": {}
+}

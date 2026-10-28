@@ -1,0 +1,63 @@
+{
+  "preview": false,
+  "init_offset": 0,
+  "messages": [
+    {
+      "type": "INFO",
+      "text": "Your timerange was substituted based on your search string"
+    }
+  ],
+  "fields": [
+    {
+      "name": "_time"
+    },
+    {
+      "name": "forwarded_request_id"
+    },
+    {
+      "name": "pid"
+    },
+    {
+      "name": "status"
+    }
+  ],
+  "results": [
+    {
+      "_time": "2026-10-28T22:55:35.432+00:00",
+      "forwarded_request_id": "auJ9Z22WV9dQBmHAY3MC_wAAAAM",
+      "pid": "14917",
+      "status": "200"
+    },
+    {
+      "_time": "2026-10-28T22:53:46.414+00:00",
+      "forwarded_request_id": "auJ8-gY5EIcAEr-n95eyowAAAAU",
+      "pid": "14338",
+      "status": "200"
+    },
+    {
+      "_time": "2026-10-28T22:52:51.078+00:00",
+      "forwarded_request_id": "auJ8wxKgGYZnEyquB9dG6AAAAAQ",
+      "pid": "13618",
+      "status": "200"
+    },
+    {
+      "_time": "2026-10-28T22:50:37.108+00:00",
+      "forwarded_request_id": "auJ8PTTQ95ExmOxxYEDNuAAAAAI",
+      "pid": "13058",
+      "status": "200"
+    },
+    {
+      "_time": "2026-10-28T22:58:35.898+00:00",
+      "forwarded_request_id": "auJ-G8Y4upfwHDSEFwBDywAAAAM",
+      "pid": "15707",
+      "status": "200"
+    },
+    {
+      "_time": "2026-10-28T22:55:48.674+00:00",
+      "forwarded_request_id": "auJ9dNiFW_n_Ji-Anla9kwAAAAA",
+      "pid": "15305",
+      "status": "200"
+    }
+  ],
+  "highlighted": {}
+}

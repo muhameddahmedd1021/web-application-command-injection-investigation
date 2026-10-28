@@ -1,7 +1,0 @@
-sourcetype,provider,"event_id",count
-"soc:network:http","Service record","N/A",36
-"soc:windows:event","Microsoft-Windows-PowerShell",4104,3
-"soc:windows:event","Microsoft-Windows-Security-Auditing",4688,3
-"soc:windows:event","Microsoft-Windows-Sysmon",1,3
-"soc:windows:event","Microsoft-Windows-Sysmon",3,36
-"soc:windows:event","Microsoft-Windows-Sysmon",11,4

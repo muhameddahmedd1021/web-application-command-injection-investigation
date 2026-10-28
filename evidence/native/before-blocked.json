@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-10-28T22:56:51.803869+00:00",
+  "mode": "On",
+  "files": {
+    "/opt/soc-web-lab/logs/backend-access.jsonl": {
+      "bytes": 21746,
+      "lines": 75
+    },
+    "/opt/soc-web-lab/logs/process-audit.jsonl": {
+      "bytes": 33312,
+      "lines": 19
+    },
+    "/var/log/squid/soc-web.jsonl": {
+      "bytes": 301,
+      "lines": 1
+    }
+  },
+  "download_targets": []
+}

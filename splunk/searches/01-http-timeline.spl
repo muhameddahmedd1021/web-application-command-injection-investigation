@@ -1,1 +1,0 @@
-index=lab_beacon sourcetype="soc:network:http" | sort 0 _time | table utc mode sequence method path status_code src_ip src_port dst_ip pid ProcessGuid

@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-10-28T22:56:51.202268+00:00",
+  "application_path": "/tmp/soc-training-note.txt",
+  "host_path": "/tmp/systemd-private-3804a81decad417f823caceed2585ba1-apache2.service-NkjiPi/tmp/soc-training-note.txt",
+  "bytes": 85,
+  "sha256": "2cb5d2a756e4ecf603f4c3bc8c82fa4a5df50aa1f0fbad3920b35e9d72d6e398",
+  "owner_uid": 33,
+  "preserved_path": "/opt/soc-web-lab/evidence/allowed-download.txt",
+  "target_absent_after_preservation": true
+}

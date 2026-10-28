@@ -1,1 +1,0 @@
-index=lab_beacon provider="Microsoft-Windows-Sysmon" event_id=3 | eval UTC=utc,PID='data.ProcessId',Source='data.SourceIp',SourcePort='data.SourcePort',Destination='data.DestinationIp',Port='data.DestinationPort',ProcessGuid='data.ProcessGuid' | table UTC PID Source SourcePort Destination Port ProcessGuid | sort 0 UTC

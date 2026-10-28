@@ -1,0 +1,32 @@
+{
+  "01-waf-decisions": {
+    "sid": "1793228497.33",
+    "rows": 7,
+    "query": "index=soc_web sourcetype=soc:web:waf earliest=1793227800 latest=1793228400 \"request.request_line\"=\"POST*\" | spath path=audit_data.engine_mode output=mode | table _time transaction.transaction_id response.status mode"
+  },
+  "02-backend-requests": {
+    "sid": "1793228530.38",
+    "rows": 6,
+    "query": "index=soc_web sourcetype=soc:web:backend earliest=1793227800 latest=1793228400 method=POST path=\"/vulnerabilities/exec/index.php\" | table _time forwarded_request_id pid status"
+  },
+  "03-download-processes": {
+    "sid": "1793228551.42",
+    "rows": 4,
+    "query": "index=soc_web sourcetype=soc:web:process earliest=1793228148 latest=1793228153 | table _time audit_serial pid ppid euid exe command"
+  },
+  "04-proxy-download": {
+    "sid": "1793228580.45",
+    "rows": 1,
+    "query": "index=soc_web sourcetype=soc:web:proxy earliest=1793227800 latest=1793228400 | table _time client_ip method url status result response_bytes"
+  },
+  "05-blocked-window": {
+    "sid": "1793228604.50",
+    "rows": 1,
+    "query": "index=soc_web earliest=1793228220 latest=1793228299 (sourcetype=soc:web:process OR sourcetype=soc:web:proxy OR (sourcetype=soc:web:backend method=POST)) | stats count"
+  },
+  "06-rce-warnings": {
+    "sid": "1793228643.53",
+    "rows": 3,
+    "query": "index=soc_web sourcetype=soc:web:waf earliest=1793228100 latest=1793228400 \"audit_data.messages{}\"=\"*attack-rce*\" | table _time transaction.transaction_id response.status"
+  }
+}

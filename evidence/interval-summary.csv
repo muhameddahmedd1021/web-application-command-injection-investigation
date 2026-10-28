@@ -1,4 +1,0 @@
-mode,requests,intervals,mean_seconds,stdev_seconds,min_seconds,max_seconds,coefficient_of_variation,median_seconds,mad_seconds,relative_mad,process_id,matched_requests
-Fixed,12,11,6.084995,2.943104,4.374293,14.186355,0.483666,4.773868,0.258515,0.054152,3476,12
-Jitter,12,11,7.360956,2.715284,3.554917,12.046858,0.368877,7.551523,2.423544,0.320934,2556,12
-Health,12,11,5.316319,1.933132,4.361046,10.887878,0.363622,4.533059,0.172013,0.037946,2428,12

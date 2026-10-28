@@ -1,0 +1,14 @@
+{
+  "source": "/opt/soc-web-lab/logs/waf-audit.jsonl",
+  "original_bytes": 829243,
+  "original_sha256": "2e69cfdb42d23d6e5dfe9d89af871075802e2f20ef74db7deb2f10bce246fb3d",
+  "valid_native_lines": 8,
+  "excluded_from_jsonl_but_preserved_verbatim": [
+    {
+      "line": 4,
+      "preserved_as": "calibration-waf-row-4.bin",
+      "reason": "'utf-8' codec can't decode byte 0x8b in position 1668: invalid start byte",
+      "sha256": "8717239b07e15460334318bb79e2d77e9386c6b0349212712cb4830172c2ffb0"
+    }
+  ]
+}

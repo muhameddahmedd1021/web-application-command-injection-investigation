@@ -1,1 +1,0 @@
-index=lab_beacon | eval provider=coalesce(provider,"Service record"), event_id=coalesce(event_id,"N/A") | stats count by sourcetype provider event_id | sort sourcetype provider event_id

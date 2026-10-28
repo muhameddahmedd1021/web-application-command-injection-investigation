@@ -1,0 +1,14 @@
+<dashboard version="1.1" theme="light"><label>Web Application Command Injection Investigation</label><description>Isolated lab evidence, 28 October 2026. All times UTC. Fixed investigation windows.</description>
+<row><panel><html><p>DetectionOnly allowed command execution and one harmless text download. The identical download input was blocked after enabling prevention. The normal ping still worked.</p><p>Short id was not detected. One earlier compressed calibration record has incomplete JSON fields; its original bytes are preserved. Blank mode does not mean the WAF was off.</p></html></panel></row>
+<row><panel><title>WAF decisions: compare with backend evidence</title><table><search><query>index=soc_web sourcetype=soc:web:waf earliest=1793227800 latest=1793228400 &quot;request.request_line&quot;=&quot;POST*&quot; | spath path=audit_data.engine_mode output=mode | table _time transaction.transaction_id response.status mode</query><earliest>0</earliest><latest>now</latest></search>
+<option name="count">20</option><option name="wrap">true</option><option name="drilldown">none</option>
+</table></panel></row>
+<row><panel><title>Download case: native process chain (euid 33 = www-data)</title><table><search><query>index=soc_web sourcetype=soc:web:process earliest=1793228148 latest=1793228153 | table _time audit_serial pid ppid euid exe command</query><earliest>0</earliest><latest>now</latest></search>
+<option name="count">20</option><option name="wrap">true</option><option name="drilldown">none</option>
+</table></panel></row>
+<row><panel><title>Outbound proxy request (355 response bytes includes HTTP headers)</title><table><search><query>index=soc_web sourcetype=soc:web:proxy earliest=1793227800 latest=1793228400 | table _time client_ip method url status result response_bytes</query><earliest>0</earliest><latest>now</latest></search>
+<option name="count">20</option><option name="wrap">true</option><option name="drilldown">none</option>
+</table></panel></row>
+<row><panel><title>Backend POSTs, web processes and proxy requests during blocked window</title><single><search><query>index=soc_web earliest=1793228220 latest=1793228299 (sourcetype=soc:web:process OR sourcetype=soc:web:proxy OR (sourcetype=soc:web:backend method=POST)) | stats count</query><earliest>0</earliest><latest>now</latest></search>
+</single></panel></row>
+</dashboard>

@@ -1,0 +1,21 @@
+{
+  "preview": false,
+  "init_offset": 0,
+  "messages": [
+    {
+      "type": "INFO",
+      "text": "Your timerange was substituted based on your search string"
+    }
+  ],
+  "fields": [
+    {
+      "name": "count"
+    }
+  ],
+  "results": [
+    {
+      "count": "0"
+    }
+  ],
+  "highlighted": {}
+}

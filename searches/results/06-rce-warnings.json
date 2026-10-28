@@ -1,0 +1,39 @@
+{
+  "preview": false,
+  "init_offset": 0,
+  "messages": [
+    {
+      "type": "INFO",
+      "text": "Your timerange was substituted based on your search string"
+    }
+  ],
+  "fields": [
+    {
+      "name": "_time"
+    },
+    {
+      "name": "transaction.transaction_id"
+    },
+    {
+      "name": "response.status"
+    }
+  ],
+  "results": [
+    {
+      "_time": "2026-10-28T22:57:00.657+00:00",
+      "transaction.transaction_id": "auJ9vAu4EmFW7RLbUz-8ugAAAAA",
+      "response.status": "403"
+    },
+    {
+      "_time": "2026-10-28T22:55:51.831+00:00",
+      "transaction.transaction_id": "auJ9dNiFW_n_Ji-Anla9kwAAAAA",
+      "response.status": "200"
+    },
+    {
+      "_time": "2026-10-28T22:55:38.538+00:00",
+      "transaction.transaction_id": "auJ9Z22WV9dQBmHAY3MC_wAAAAM",
+      "response.status": "200"
+    }
+  ],
+  "highlighted": {}
+}

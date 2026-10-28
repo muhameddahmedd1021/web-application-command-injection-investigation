@@ -1,0 +1,16 @@
+{
+  "search": "index=soc_web sourcetype=soc:web:waf \"audit_data.messages{}\"=\"*attack-rce*\" | table _time transaction.transaction_id transaction.remote_address response.status audit_data.engine_mode request.body{}",
+  "description": "CRS remote command execution warning. Investigate backend processes and proxy activity before deciding impact.",
+  "is_scheduled": false,
+  "disabled": false,
+  "cron_schedule": "* * * * *",
+  "dispatch.earliest_time": "-15m",
+  "dispatch.latest_time": "now",
+  "alert.track": true,
+  "alert.suppress": true,
+  "alert.suppress.period": "900s",
+  "alert_type": "number of events",
+  "alert_comparator": "greater than",
+  "alert_threshold": "0",
+  "actions": ""
+}

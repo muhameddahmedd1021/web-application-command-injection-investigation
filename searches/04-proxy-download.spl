@@ -1,0 +1,1 @@
+index=soc_web sourcetype=soc:web:proxy earliest=1793227800 latest=1793228400 | table _time client_ip method url status result response_bytes
