@@ -1,1 +1,2 @@
-index=soc_web sourcetype=soc:web:waf earliest=1793228100 latest=1793228400 "audit_data.messages{}"="*attack-rce*" | table _time transaction.transaction_id response.status
+index=soc_web sourcetype=soc:web:waf earliest=1793228100 latest=1793228400 "audit_data.messages{}"="*attack-rce*"
+| table _time transaction.transaction_id response.status

@@ -1,1 +1,2 @@
-index=soc_web earliest=1793228220 latest=1793228299 (sourcetype=soc:web:process OR sourcetype=soc:web:proxy OR (sourcetype=soc:web:backend method=POST)) | stats count
+index=soc_web earliest=1793228220 latest=1793228299 (sourcetype=soc:web:process OR sourcetype=soc:web:proxy OR (sourcetype=soc:web:backend method=POST))
+| stats count

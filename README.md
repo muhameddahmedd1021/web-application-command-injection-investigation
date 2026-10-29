@@ -1,54 +1,57 @@
 # Web Application Command Injection Investigation
 
-A SOC investigation of a command injection attempt against a deliberately vulnerable ping form. I followed the request through a WAF, the web server's processes and an outbound proxy, then compared detection with prevention.
+Investigated a command injection attempt against a vulnerable web form using WAF alerts, Linux process records and outbound proxy logs in Splunk.
 
-In DetectionOnly mode, the injected command ran as `www-data` and downloaded one harmless text file through Squid. After enabling blocking, the **identical input** returned 403 and produced no backend POST, web process, proxy request or new download during the observed window. A normal ping still worked.
+**Outcome:** the allowed request executed as `www-data` and downloaded an internal text file through Squid. Enabling WAF blocking stopped the identical request, while a normal ping continued to work.
 
-## Cases
+![Investigation dashboard](images/16-dashboard.jpg)
 
-| Case | Observed result |
+## Cases and findings
+
+| Case | Finding |
 | --- | --- |
-| Normal ping | HTTP 200; expected shell and ping processes. |
-| Command execution | `/usr/bin/id` triggered CRS rule 932160 but still executed in DetectionOnly mode. |
-| Internal text download | WAF request linked to Apache, shell, curl, Squid, the file server request and a matching file hash. |
-| Prevention comparison | Same download input blocked; normal ping remained available. |
+| Normal ping | The request reached DVWA and started the expected shell and ping processes. |
+| Command execution | `/usr/bin/id` matched CRS rule 932160 and executed while the WAF was in DetectionOnly mode. |
+| Internal download | The WAF request, Apache worker, shell, curl, proxy request and downloaded file formed one evidence chain. |
+| Blocking comparison | The same input returned 403, with no observed backend POST, web process, proxy request or new download in the comparison window. Normal ping still worked. |
 
-An additional calibration input using the short command `id` executed without an RCE warning. This is a coverage limitation, not evidence that every injected command was detected. One earlier compressed-response audit record also had invalid JSON encoding; its original bytes are preserved and the gap is documented.
+## Investigation
+
+The starting question was whether the WAF had recorded an attempt or whether the server had actually executed it. I followed the request identifier into the backend log, linked the Apache worker to its child processes, and checked the outbound URL and downloaded file.
+
+![Server processes for the download request](images/12-download-process-search.jpg)
+
+The saved file is 85 bytes of plain text. Its SHA-256 matches the served file. It was downloaded, not executed. The [walkthrough](docs/investigation.md) shows each stage and the evidence used to reach that conclusion.
 
 ## Environment
 
-Ubuntu 24.04, DVWA, Apache, ModSecurity 2.9.7 with OWASP CRS 3.3.5, auditd, Squid 6.14 and Splunk Enterprise 9.4.1. All activity stayed inside a private VMware lab. WAF, backend, proxy and Splunk were separate services on the same Linux VM; they were not separate security boundaries.
+Ubuntu 24.04, DVWA, Apache, ModSecurity 2.9.7 with OWASP CRS 3.3.5, auditd, Squid 6.14 and Splunk Enterprise 9.4.1 in a private VMware lab. WAF, backend, proxy and Splunk run as services on the same Linux VM. The browser and internal file service are on the Windows host.
 
 ```mermaid
 flowchart LR
-    B[Browser: 192.168.144.1] --> W[WAF: .20 port 8080]
-    W --> A[DVWA backend: loopback 8081]
-    A --> P[Shell and curl: www-data]
-    P --> S[Squid: .20 port 3128]
-    S --> F[Text file service: .1 port 8090]
-    W -. native logs .-> SIEM[Splunk: .20]
-    P -. auditd .-> SIEM
-    S -. native logs .-> SIEM
+    B["Browser: 192.168.144.1"] --> W["WAF: .20 port 8080"]
+    W --> A["DVWA backend: loopback 8081"]
+    A --> P["Shell and curl: www-data"]
+    P --> S["Squid: .20 port 3128"]
+    S --> F["Text file service: .1 port 8090"]
+    W -.-> SIEM["Splunk: .20"]
+    P -.-> SIEM
+    S -.-> SIEM
 ```
 
-## Investigation and evidence
+## Tested alert
+
+The scheduled command-injection alert was configured before the command tests. It triggered at **22:56:00 UTC on 28 October 2026** with two results. Scheduling was stopped after validation and the trigger history was retained.
+
+![Scheduled alert trigger history](images/07-scheduled-alert-trigger.jpg)
+
+## Project files
 
 - [Investigation and timeline](docs/investigation.md)
-- [Lab configuration and manual reproduction](docs/lab-and-reproduction.md)
-- [Six simple searches and their verified results](docs/search-guide.md)
-- [Evidence provenance and limitations](docs/evidence-guide.md)
+- [Six searches, explanations and result screenshots](docs/search-guide.md)
+- [Lab configuration and reproduction](docs/lab-and-reproduction.md)
+- [Native evidence and scope](docs/evidence-guide.md)
 - [Dashboard source](dashboard/web-investigation.xml)
-- [Verified dashboard screenshot](images/16-dashboard.jpg)
-- [Native evidence](evidence/native/) and [file hashes](evidence/SHA256SUMS.json)
+- [Original logs and file proof](evidence/native/) and [evidence hashes](evidence/SHA256SUMS.json)
 
-The scheduled alert was configured before the command attempts. It fired at **22:56:00 UTC on 28 October 2026**, with two results. Its schedule was stopped after validation while retaining trigger history. No email or webhook action was used.
-
-![Real scheduled alert trigger history](images/07-scheduled-alert-trigger.jpg)
-
-![Web server process chain for the download](images/12-download-process-search.jpg)
-
-The downloaded file was plain text, 85 bytes, SHA-256 `2cb5d2a756e4ecf603f4c3bc8c82fa4a5df50aa1f0fbad3920b35e9d72d6e398`. It was not executed. The investigation does not demonstrate malware, persistence, credential theft or public command-and-control traffic.
-
-The project practices web attack triage, WAF actions, process correlation, proxy fields, scope and evidence-based conclusions. The small product-specific addition is understanding the CRS rule and the log fields used here.
-
-The repository URL retains its earlier name. Its current content is this command injection investigation; the previous beaconing lab remains in Git history.
+The [evidence guide](docs/evidence-guide.md) records the short-command coverage gap and one preserved calibration record with invalid encoding. The performed response was WAF blocking; application code remediation is a separate recommendation.

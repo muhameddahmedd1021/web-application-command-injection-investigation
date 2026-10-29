@@ -1,1 +1,2 @@
-index=soc_web sourcetype=soc:web:process earliest=1793228148 latest=1793228153 | table _time audit_serial pid ppid euid exe command
+index=soc_web sourcetype=soc:web:process earliest=1793228148 latest=1793228153
+| table _time audit_serial pid ppid euid exe command

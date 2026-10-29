@@ -1,1 +1,2 @@
-index=soc_web sourcetype=soc:web:backend earliest=1793227800 latest=1793228400 method=POST path="/vulnerabilities/exec/index.php" | table _time forwarded_request_id pid status
+index=soc_web sourcetype=soc:web:backend earliest=1793227800 latest=1793228400 method=POST path="/vulnerabilities/exec/index.php"
+| table _time forwarded_request_id pid status

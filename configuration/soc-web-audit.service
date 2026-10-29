@@ -1,0 +1,9 @@
+[Unit]
+Description=Normalize existing native web audit events for Splunk
+After=auditd.service
+[Service]
+ExecStart=/usr/bin/python3 /opt/soc-web-lab/collect_web_audit.py
+Restart=on-failure
+UMask=0027
+[Install]
+WantedBy=multi-user.target
